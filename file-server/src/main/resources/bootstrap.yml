@@ -1,0 +1,19 @@
+spring:
+  cloud:
+    config:
+      name: file-server
+      profile: dev
+      label: master
+      fail-fast: true
+      discovery:
+        enabled: true
+        serviceId: config-server
+    bus:
+      trace:
+        enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:1111/eureka/
+

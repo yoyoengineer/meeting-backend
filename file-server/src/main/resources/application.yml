@@ -1,0 +1,17 @@
+server:
+  port: 8099
+spring:
+  application:
+    name: file-server
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: ${RABBITMQ_USERNAME}
+    password: ${RABBITMQ_PASSWORD}
+
+management:
+  security:
+    enabled: false
+
+FTP_USERNAME: ${FTP_USERNAME}
+FTP_PASSWORD: ${FTP_PASSWORD}
