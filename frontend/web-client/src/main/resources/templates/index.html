@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>首页</title>
+
+  <!-- ========== Css Files ========== -->
+  <link href="css/root.css" rel="stylesheet">
+
+  </head>
+  <body>
+  <!-- Start Page Loading -->
+  <!--<div class="loading"><img src="img/loading.gif" alt="loading-img"></div>-->
+  <!-- End Page Loading -->
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+  <!-- START TOP -->
+  <div id="top" class="clearfix">
+
+    <!-- Start App Logo -->
+    <div class="applogo">
+      <a href="/" class="logo">CampusEVENT</a>
+    </div>
+    <!-- End App Logo -->
+
+    <!-- Start Sidebar Show Hide Button -->
+    <a href="#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
+    <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+    <!-- End Sidebar Show Hide Button -->
+
+    <!-- Start Searchbox -->
+    <form class="searchform">
+      <input type="text" class="searchbox" id="searchbox" placeholder="搜索">
+      <span class="searchbutton"><i class="fa fa-search"></i></span>
+    </form>
+    <!-- End Searchbox -->
+
+
+    <!-- Start Sidepanel Show-Hide Button -->
+    <a href="#sidepanel" class="sidepanel-open-button"><i class="fa fa-outdent"></i></a>
+    <!-- End Sidepanel Show-Hide Button -->
+
+
+    <!-- Start Top Right -->
+    <ul class="top-right">
+      <li class="link">
+        <a href="/" class="hdbutton"><i class="fa fa-refresh"></i>刷新</a>
+      </li>
+      <li class="link">
+        <a href="create_event" class="hdbutton"><i class="fa fa-users"></i> 创建会议</a>
+      </li>
+
+      <li class="dropdown link">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle profilebox"><img class="myPicture"  alt="img"><b class="myname"></b><span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-menu-list dropdown-menu-right">
+          <li role="presentation" class="dropdown-header">概况</li>
+          <li><a href="/"><i class="fa falist fa-user"></i>我的概况</a></li>
+          <li><a href="create_event"><i class="fa falist fa-users"></i>创建会议</a></li>
+          <li><a href="#"><i class="fa falist fa-file-o"></i>文件</a></li>
+          <li class="divider"></li>
+          <li><a  id ="logout" href="#"><i class="fa falist fa-power-off"></i> 退出</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <!-- End Top Right -->
+
+  </div>
+  <!-- END TOP -->
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START SIDEBAR -->
+  <div class="sidebar clearfix">
+
+    <ul class="sidebar-panel nav">
+      <li class="sidetitle">通用</li>
+      <li><a href="/"><span class="icon color5"><i class="fa fa-user"></i></span>我的概况(主页)</a></li>
+      <li><a href="attended"><span class="icon color6"><i class="fa fa-check-square-o"></i></span>我参加的会议</a></li>
+      <li><a href="edit-profile"><span class="icon color8"><i class="fa fa-edit"></i></span>修改概况</a></li>
+      <li><a href="create_event"><span class="icon color9"><i class="fa fa-group"></i></span>创建会议</a>
+
+      </li>
+    </ul>
+
+    <ul class="sidebar-panel nav">
+      <li class="sidetitle">其他</li>
+      <li><a href="#"><span class="icon color15"><i class="fa fa-file-archive-o"></i></span>文件</a></li>
+      <li><a href="#"><span class="icon color7"><i class="fa fa-map-marker"></i></span>地图</a></li>
+      <li><a href="#"><span class="icon color10"><i class="fa fa-line-chart"></i></span>信息统计</a></li>
+    </ul>
+
+
+  </div>
+<!-- END SIDEBAR -->
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START CONTENT -->
+  <div class="content">
+
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- START CONTAINER -->
+    <div class="container-no-padding">
+
+      <!-- Start Social Profile -->
+      <div class="social-profile">
+
+        <!-- Start Top -->
+        <div class="social-top">
+
+          <div class="profile-left">
+            <img src="" alt="img" class="profile-img myFriendPicture">
+            <h1 class="name"><span class="myfriendname"></span> <span id ="newFriend"></span></h1>
+            <p class="profile-text"><i class="fa fa-location-arrow"><span class="myCurrentTown"></span></i></p>
+          </div>
+
+          <ul class="social-stats">
+            <li><b>16</b>会议</li>
+            <li><b>123</b>访客</li>
+            <li><b>523</b>视频</li>
+          </ul>
+
+        </div>
+        <!-- End Top -->
+
+        <!-- Start Social Content -->
+        <div class="social-content clearfix">
+
+
+
+          <!-- Start Left -->
+          <div class="col-md-6 col-lg-4">
+            <div class="panel panel-transparent">
+
+              <div class="panel-title">
+                关于我
+                <ul class="panel-tools">
+                  <li><a class="icon minimise-tool"><i class="fa fa-minus"></i></a></li>
+                </ul>
+              </div>
+
+              <div class="panel-body">
+                <div class="aboutMe">
+                </div>
+                <hr>
+                <div class="f-bold"><i class="fa fa-envelope"></i> <span class="myEmail"> arnold@qq.com</span></div>
+                <hr>
+                <div class="f-bold"><i class="fa fa-location-arrow"></i> <span class="myCurrentTown"></span></div>
+                <hr>
+                <div class="f-bold"><i class="fa fa-building"></i> <span class="myCompany"></span></div>
+
+              </div>
+
+            </div>
+            <div class="text-c">
+            <ul class="topstats clearfix text-c">
+              <li class="arrow"></li>
+              <li >
+                <span class="title"><i class="fa fa-eye"></i> 访问人数</span>
+                <h3>1000</h3>
+                <p></p>
+                <p></p>
+              </li>
+              <li >
+                <span class="title"><i class="fa fa-group"></i> 我主持的会议数量</span>
+                <h3>16</h3>
+                <p></p>
+                <p></p>
+              </li>
+
+              <li>
+                <span class="title"><i class="fa fa-users"></i> 计划参与人数</span>
+                <h3 class="color-up">696</h3>
+                <p></p>
+                <p></p>
+              </li>
+
+              <li>
+                <span class="title"><i class="fa fa-eye"></i> 实际参与人数</span>
+                <h3>960</h3>
+                <p></p>
+                <p></p>
+              </li>
+            </ul>
+            </div>
+          </div>
+          <!-- End Left -->
+
+
+          <!-- Start Right -->
+          <div  class="col-md-12 col-lg-8">
+              <div id="myEvents">
+
+              </div>
+
+            <!--Statrt Pagination-->
+
+            <nav class="text-c">
+              <ul class="pagination">
+                <li>
+                  <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li class="disabled"><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li>
+                  <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+            <!--End Pagination-->
+          </div>
+          <!-- End Right -->
+
+        </div>
+        <!-- End Social Content -->
+
+
+      </div>
+      <!-- End Social Profile -->
+
+
+    </div>
+    <!-- END CONTAINER -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+    <!-- Start Footer -->
+    <div class="row footer text-r">
+      Copyright © 2018 <a href="#" target="_blank">Yes_Binary</a> All rights reserved.
+    </div>
+    <!-- End Footer -->
+
+
+  </div>
+<!-- End Content -->
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START SIDEPANEL -->
+
+  <div role="tabpanel" class="sidepanel">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#notifications" aria-controls="notifications" role="tab" data-toggle="tab">消息通知</a></li>
+      <li role="presentation" ><a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">我的好友</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+      <!-- Start Today -->
+      <div role="tabpanel" class="tab-pane active" id="notifications">
+
+        <div class="sidepanel-m-title">
+          新消息
+          <span class="left-icon"><a id="notificationRefresh"href="#"><i class="fa fa-refresh"></i></a></span>
+        </div>
+
+
+      </div>
+      <!-- End Today -->
+
+      <!-- Start Friend List -->
+      <div role="tabpanel" class="tab-pane" id="chat">
+
+        <div class="sidepanel-m-title">
+          好友列表
+            <span class="left-icon"><a  id="friendRefresh" href="#"><i class="fa fa-refresh"></i></a></span>
+        </div>
+        <ul id="friendList" class="group">
+
+        </ul>
+
+        <form class="search">
+          <input type="text" class="form-control" placeholder="搜索好友">
+        </form>
+      </div>
+      <!-- End Friend List -->
+
+    </div>
+
+  </div>
+<!-- END SIDEPANEL -->
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+
+
+<!-- ================================================
+jQuery Library
+================================================ -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- ================================================
+Bootstrap Core JavaScript File
+================================================ -->
+<script src="js/bootstrap/bootstrap.min.js"></script>
+
+<!-- ================================================
+Plugin.js - Some Specific JS codes for Plugin Settings
+================================================ -->
+<script type="text/javascript" src="js/plugins.js"></script>
+
+<!-- ================================================
+Websocket where notifications (friend requests
+ are initialized and handled)
+================================================ -->
+<!--<script type="text/javascript" src="js/websocket/websocket-js.js"></script>-->
+  <script type="text/javascript" src="js/profile/profile.js"></script>
+  <script type="text/javascript" src="js/event/myevents.js"></script>
+  <script type="text/javascript" src="js/logout.js"></script>
+
+
+  </body>
+</html>

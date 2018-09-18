@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: web-interface
+  session:
+    store-type: redis
+server:
+  port: 9999
+#  context-path: /web
+
+spring.thymeleaf.mode: LEGACYHTML5
+spring.thymeleaf.cache: false

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cc_view"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="80dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/grradientu_radient_danmuku">
+
+                    <master.flame.danmaku.ui.widget.DanmakuView
+                        android:id="@+id/danmaku_view"
+                        tools:text="danmuku"
+                        android:textColor="@android:color/black"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp">
+                <TextView
+                    android:id="@+id/event_date_created"
+                    tools:text="lastModified created"
+                    android:textColor="@color/white"
+                    android:textStyle="italic"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:textSize="12sp"/>
+                <TextView
+                    android:id="@+id/event_topic"
+                    tools:text="my_topic"
+                    android:textColor="@color/graylight"
+                    android:textStyle="bold"
+                    android:textSize="15sp"
+                    android:layout_marginStart="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    />
+
+            </LinearLayout>
+
+            <android.support.v7.widget.CardView
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                app:cardBackgroundColor="#a7d9eaf4"
+                android:layout_width="match_parent"
+                android:layout_height="165dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="2"
+                    android:layout_marginStart="10dp">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/event_admin"
+                                android:src="@drawable/admin"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:layout_marginTop="2dp"
+                                android:text="Admin"
+                                android:layout_marginStart="20dp"
+                                android:textSize="12sp"
+                                android:textColor="@android:color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/event_attendees"
+                                android:src="@drawable/people_attending"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:text="Attendees"
+                                android:textSize="12sp"
+                                android:layout_marginStart="10dp"
+                                android:textColor="@android:color/black"
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/event_pool"
+                                android:src="@drawable/polling_booth1"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:text="Votes"
+                                android:textSize="12sp"
+                                android:layout_marginStart="20dp"
+                                android:textColor="@android:color/black"
+
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/view_people_like"
+                                android:src="@drawable/more_likes2"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:layout_marginTop="2dp"
+                                android:text="Liked by"
+                                android:layout_marginStart="20dp"
+                                android:textSize="12sp"
+                                android:textColor="@android:color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="4dp"
+                            android:orientation="vertical"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/event_documents"
+                                android:src="@drawable/document"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:text="@string/documents"
+                                android:layout_marginStart="7dp"
+                                android:textSize="12sp"
+                                android:textColor="@android:color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="70dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/event_photos"
+                                android:src="@drawable/photos"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:text="Photos"
+                                android:textSize="12sp"
+                                android:layout_marginStart="20dp"
+                                android:textColor="@android:color/black"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical"
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/event_notes"
+                                android:src="@drawable/note_taking"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:text="Notes"
+                                android:textSize="12sp"
+                                android:layout_marginStart="25dp"
+                                android:layout_width="wrap_content"
+                                android:textColor="@android:color/black"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginStart="5dp"
+                            android:layout_marginTop="4dp"
+                            android:orientation="vertical"
+                            android:layout_width="86dp"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/send_comment"
+                                android:src="@drawable/comments_tras1"
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp" />
+
+                            <TextView
+                                android:text="write comment"
+                                android:layout_marginStart="0dp"
+                                android:textColor="@android:color/black"
+                                android:textSize="12sp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <!--live interact-->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/live_interact"
+                    android:hint="@string/interact_danmuku"
+                    android:textSize="15sp"
+                    android:textStyle="italic"
+                    android:layout_width="270dp"
+                    android:layout_height="40dp"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:foregroundGravity="center"
+                    android:textColor="@android:color/black"
+                    android:background="@drawable/rounded_edittext"
+                    />
+
+                <Button
+                    android:id="@+id/send_interact"
+                    android:text="@string/send"
+                    android:background="@drawable/circlewhitebutton"
+                    android:layout_marginStart="15dp"
+                    android:textStyle="italic"
+                    android:layout_width="55dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/comment_area"
+                    android:layout_width="265dp"
+                    android:layout_height="90dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/hint_comment"
+                    android:textSize="15sp"
+                    android:gravity="top"
+                    android:inputType="textMultiLine"
+                    android:focusable="false"
+                    android:background="@drawable/rounded_edittext"
+                    android:visibility="gone"
+                    />
+
+                <LinearLayout
+                    android:layout_marginTop="10dp"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <Button
+                        android:id="@+id/send_comment_button"
+                        android:text="@string/send"
+                        android:background="@drawable/circlewhitebutton"
+                        android:layout_marginStart="15dp"
+                        android:textStyle="italic"
+                        android:layout_width="55dp"
+                        android:layout_height="wrap_content"
+                        android:textSize="15sp"
+                        android:visibility="gone"
+                        />
+
+                    <TextView
+                        android:id="@+id/collapse_comment_textview"
+                        android:layout_marginTop="10dp"
+                        android:text="@string/collapse"
+                        android:textSize="15sp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/white"
+                        android:textAppearance="@style/Base.Widget.AppCompat.Spinner.Underlined"
+                        android:visibility="gone"
+                        />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/collapse_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/white"
+                android:text="@string/collaspse_comment"/>
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:id="@+id/recycler_event_list_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="5dp"
+                android:id="@+id/view_more_comment"
+                android:background="@color/gray_background">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_gravity="center"
+                        android:text="@string/view_more_comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/more"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+            <TextView
+                android:id="@+id/collapse_announcement"
+                android:layout_width="wrap_content"
+                android:layout_height="23dp"
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:layout_marginStart="5dp"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:text="@string/announcement"
+                android:textColor="@color/white" />
+
+            <android.support.v7.widget.RecyclerView
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:id="@+id/recycler_event_list_announcement"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </android.support.v7.widget.RecyclerView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="3dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="65dp"
+                android:id="@+id/view_more_announcement"
+                android:background="@color/gray_background">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_gravity="center"
+                        android:text="@string/view_more_announcement"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_marginEnd="3dp"
+                        android:src="@drawable/more"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp" />
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>

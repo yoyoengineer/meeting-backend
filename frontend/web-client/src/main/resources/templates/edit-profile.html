@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="bootstrap, admin, dashboard, flat admin template, responsive," />
+  <title>修改概况</title>
+
+  <!-- ========== Css Files ========== -->
+  <link href="css/root.css" rel="stylesheet">
+  <link href="css/city-picker.css" rel="stylesheet">
+
+  </head>
+  <body>
+  <!-- Start Page Loading -->
+  <!--<div class="loading"><img src="img/loading.gif" alt="loading-img"></div>-->
+  <!-- End Page Loading -->
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+  <!-- START TOP -->
+  <div id="top" class="clearfix">
+
+    <!-- Start App Logo -->
+    <div class="applogo">
+      <a href="/" class="logo">CampusEVENT</a>
+    </div>
+    <!-- End App Logo -->
+
+    <!-- Start Sidebar Show Hide Button -->
+    <a href="#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
+    <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+    <!-- End Sidebar Show Hide Button -->
+
+    <!-- Start Searchbox -->
+    <form class="searchform">
+      <input type="text" class="searchbox" id="searchbox" placeholder="搜索">
+      <span class="searchbutton"><i class="fa fa-search"></i></span>
+    </form>
+    <!-- End Searchbox -->
+
+
+    <!-- Start Sidepanel Show-Hide Button -->
+    <a href="#sidepanel" class="sidepanel-open-button"><i class="fa fa-outdent"></i></a>
+    <!-- End Sidepanel Show-Hide Button -->
+
+
+    <!-- Start Top Right -->
+    <ul class="top-right">
+      <li class="link">
+        <a href="/" class="hdbutton"><i class="fa fa-refresh"></i>刷新</a>
+      </li>
+      <li class="link">
+        <a href="create_event" class="hdbutton"><i class="fa fa-users"></i> 创建会议</a>
+      </li>
+
+      <li class="dropdown link">
+        <a href="#" data-toggle="dropdown" class="dropdown-toggle profilebox"><img class="myPicture"  alt="img"><b class="myname"></b><span class="caret"></span></a>
+        <ul class="dropdown-menu dropdown-menu-list dropdown-menu-right">
+          <li role="presentation" class="dropdown-header">概况</li>
+          <li><a href="/"><i class="fa falist fa-user"></i>我的概况</a></li>
+          <li><a href="create_event"><i class="fa falist fa-users"></i>创建会议</a></li>
+          <li><a href="#"><i class="fa falist fa-file-o"></i>文件</a></li>
+          <li class="divider"></li>
+          <li><a  id ="logout" href="#"><i class="fa falist fa-power-off"></i> 退出</a></li>
+        </ul>
+      </li>
+
+    </ul>
+    <!-- End Top Right -->
+
+  </div>
+  <!-- END TOP -->
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START SIDEBAR -->
+  <div class="sidebar clearfix">
+
+    <ul class="sidebar-panel nav">
+      <li class="sidetitle">通用</li>
+      <li><a href="/"><span class="icon color5"><i class="fa fa-user"></i></span>我的概况(主页)</a></li>
+      <li><a href="attended"><span class="icon color6"><i class="fa fa-check-square-o"></i></span>我参加的会议</a></li>
+      <li><a href="edit-profile"><span class="icon color8"><i class="fa fa-edit"></i></span>修改概况</a></li>
+      <li><a href="create_event"><span class="icon color9"><i class="fa fa-group"></i></span>创建会议</a>
+
+      </li>
+    </ul>
+
+    <ul class="sidebar-panel nav">
+      <li class="sidetitle">其他</li>
+      <li><a href="#"><span class="icon color15"><i class="fa fa-file-archive-o"></i></span>文件</a></li>
+      <li><a href="#"><span class="icon color7"><i class="fa fa-map-marker"></i></span>地图</a></li>
+      <li><a href="#"><span class="icon color10"><i class="fa fa-line-chart"></i></span>信息统计</a></li>
+    </ul>
+
+
+  </div>
+<!-- END SIDEBAR -->
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START CONTENT -->
+<div class="content">
+
+  <!-- Start Page Header -->
+  <div class="page-header social-top">
+    <div class="profile-left">
+      <img src="" alt="img" class="profile-img myFriendPicture">
+      <h1 class="name"><span class="myfriendname"></span></h1>
+
+    </div>
+
+  </div>
+  <!-- End Page Header -->
+
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START CONTAINER -->
+<div class="container-default">
+
+    <h1>修改概况</h1>
+    <hr>
+  <!--<form class="form-horizontal" role="form">-->
+    <div class="row">
+      <!-- left column  Upload part-->
+      <div class="col-md-4">
+
+        <!--Profile Picture-->
+        <div class="form-group">
+          <label class="btn btn-success btn-file">
+            <i class="fa fa-upload"></i>
+            更换头像<input type="file" id="profile"  name="file" style="display: none;">
+          </label>
+
+        </div>
+
+        <!--Background Picture-->
+        <div class="form-group">
+          <label class="btn btn-success btn-file">
+            <i class="fa fa-upload"></i>
+            更换背景图片<input type="file" id="background"  name="file" style="display: none;">
+          </label>
+
+        </div>
+        <br>
+        <br>
+
+
+        <!-- The global progress bar -->
+        <!--<div id="progress" class="progress">-->
+          <!--<div class="progress-bar progress-bar-success"></div>-->
+        <!--</div>-->
+
+        <div class="progress progress-striped active">
+          <div id ="progress" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" >
+          </div>
+        </div>
+
+        <!-- The container for the uploaded files -->
+        <div id="files" class="files"></div>
+        <div id="cancelbTn"></div>
+
+      </div>
+
+      <!-- edit form column -->
+      <div class="col-md-8 personal-info">
+        <!--<div class="alert alert-info alert-dismissable">-->
+          <!--<a class="panel-close close" data-dismiss="alert">×</a>-->
+          <!--<i class="fa fa-coffee"></i>-->
+          <!--This is an <strong>.alert</strong>. Use this to show important messages to the user.-->
+        <!--</div>-->
+        <h3>个人信息</h3>
+
+        <form class="form-horizontal" role="form">
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">姓名：</label>
+            <div class="col-lg-7">
+              <input name="firstName" id="firstName" class="form-control" type="text" value="">
+            </div>
+            <button id="firstNameSave" class="btn "><i class="fa fa-save"></i></button>
+            <span>
+            </span>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">邮箱地址：</label>
+            <div class="col-lg-7">
+              <input  id="email" name="email" class="form-control" type="email" value="">
+            </div>
+            <button id="emailSave" class="btn "><i class="fa fa-save"></i></button>
+            <span></span>
+          </div>
+
+
+          <div class="form-group">
+            <label class="col-lg-3 control-label">生日：</label>
+            <div class="col-lg-7">
+              <input id="birthDate" name="birthDate" class="form-control" type="date" value="" placeholder="dd/mm/yyyy">
+            </div>
+            <button id="birthDateSave" class="btn"><i class="fa fa-save"></i></button>
+            <span></span>
+          </div>
+
+
+
+
+               <!--Map for home town-->
+          <div class="form-group">
+            <label class="col-lg-3 control-label">出生地：</label>
+            <div class="col-lg-7">
+              <!--<input name="homeTown" id="suggestId" class="form-control" type="text" value="">-->
+              <div style="position:relative;">
+                <input readonly type="text" id = "homeTown" data-toggle="city-picker"  class="form-control" placeholder="请选择省/市" data-level="city" >
+              </div>
+            </div>
+            <button id="homeTownSave" class="btn "><i class="fa fa-save"></i></button>
+            <span></span>
+          </div>
+
+               <!--Map for current town-->
+          <div class="form-group">
+            <label class="col-lg-3 control-label">现居地：</label>
+            <div class="col-lg-7">
+              <div style="position:relative;">
+                <input readonly type="text" id = "currentTown" data-toggle="city-picker"  class="form-control" placeholder="请选择省/市" data-level="city" >
+              </div>
+            </div>
+            <button id="currentTownSave" class="btn "><i class="fa fa-save"></i></button>
+            <span></span>
+          </div>
+
+        </form>
+        <br>
+        <hr>
+
+           <!--Change Password Form -->
+        <h3>修改密码</h3>
+        <form  id="form-password" class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-md-3 control-label">新密码：</label>
+            <div class="col-md-8">
+              <input class="form-control" id="password" name="password" type="password" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">确认密码：</label>
+            <div class="col-md-8">
+              <input class="form-control" id="confirm_password" type="password" value="">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <button class="btn btn-primary" id="savePwd">确认修改</button>
+              <input type="reset" id="resetBtn" class="btn btn-default" value="取消">
+              <span id="showResult"></span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  <!--</form>-->
+  <hr>
+
+</div>
+<!-- END CONTAINER -->
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+
+<!-- Start Footer -->
+  <div class="row footer text-r">
+    Copyright © 2018 <a href="#" target="_blank">Yes_Binary</a> All rights reserved.
+  </div>
+<!-- End Footer -->
+
+
+</div>
+<!-- End Content -->
+ <!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+<!-- START SIDEPANEL -->
+
+  <div role="tabpanel" class="sidepanel">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#notifications" aria-controls="notifications" role="tab" data-toggle="tab">消息通知</a></li>
+      <li role="presentation"><a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">我的好友</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+      <!-- Start Today -->
+      <div role="tabpanel" class="tab-pane active" id="notifications">
+
+        <div class="sidepanel-m-title">
+          新消息
+          <span class="left-icon"><a id="notificationRefresh" href="#"><i class="fa fa-refresh"></i></a></span>
+        </div>
+
+
+      </div>
+      <!-- End Today -->
+
+      <!-- Start Friend List -->
+      <div role="tabpanel" class="tab-pane" id="chat">
+
+        <div class="sidepanel-m-title">
+          好友列表
+            <span class="left-icon"><a  id="friendRefresh" href="#"><i class="fa fa-refresh"></i></a></span>
+        </div>
+        <ul id="friendList" class="group">
+
+        </ul>
+
+        <form class="search">
+          <input type="text" class="form-control" placeholder="搜索好友">
+        </form>
+      </div>
+      <!-- End Friend List -->
+
+    </div>
+
+  </div>
+<!-- END SIDEPANEL -->
+<!-- //////////////////////////////////////////////////////////////////////////// --> 
+
+
+
+<!-- ================================================
+jQuery Library
+================================================ -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- ================================================
+Bootstrap Core JavaScript File
+================================================ -->
+<script src="js/bootstrap/bootstrap.min.js"></script>
+
+<!-- ================================================
+Plugin.js - Some Specific JS codes for Plugin Settings
+================================================ -->
+<script type="text/javascript" src="js/plugins.js"></script>
+
+<!-- ================================================
+Jquery UI
+================================================ -->
+<script src="js/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- ================================================
+Websocket where notifications (friend requests
+ are initialized and handled)
+================================================ -->
+
+
+<!-- ================================================
+File Uploads
+================================================ -->
+<script src="js/file-uploader/jquery.iframe-transport.js"></script>
+<script src="js/file-uploader/jquery.fileupload.js"></script>
+<!-- The File Upload processing plugin -->
+<script src="js/file-uploader/jquery.fileupload-process.js"></script>
+<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+<script src="js/file-uploader/load-image.all.min.js"></script>
+<!-- The File Upload image preview & resize plugin -->
+<script src="js/file-uploader/jquery.fileupload-image.js"></script>
+<!-- The File Upload validation plugin -->
+<script src="js/file-uploader/jquery.fileupload-validate.js"></script>
+<script type="text/javascript" src="js/edit-profile/upload-pictures.js"></script>
+
+<!-- ================================================
+Baidu Map
+================================================ -->
+<!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gcGxmnKaMAxppjlaVkVAI3U9kpRj3Hef"></script>-->
+<!--<script src="js/baidu-map/map.js"></script>-->
+<script src="js/edit-profile/edit-profile.js"></script>
+<script type="text/javascript" src="js/profile/profile.js"></script>
+<script type="text/javascript" src="js/logout.js"></script>
+<script type="text/javascript" src="js/city-picker/city-picker.data.js"></script>
+<script type="text/javascript" src ="js/city-picker/city-picker.js"></script>
+
+
+
+
+</body>
+</html>

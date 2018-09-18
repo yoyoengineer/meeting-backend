@@ -1,0 +1,32 @@
+spring.application.name: websocket-service
+server.port: 8855
+spring.session.store-type: redis
+logging.level.com.binary: debug
+
+
+## Event-driven configurations
+spring:
+  cloud:
+    stream:
+      bindings:
+
+        activities:
+          destination: activities
+          content-type: application/json
+          group: activityGroup
+          binder: local_rabbit
+
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+
+      rabbit:
+        bindings:
+          activities:
+            consumer:
+              durableSubscription: false

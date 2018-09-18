@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="bootstrap, admin, dashboard, flat admin template, responsive," />
+    <title>会议内容</title>
+
+    <!-- ========== Css Files ========== -->
+    <link href="css/root.css" rel="stylesheet">
+    <link href="css/barrager.css" rel="stylesheet">
+</head>
+<body>
+<!-- Start Page Loading -->
+<!--<div class="loading"><img src="img/loading.gif" alt="loading-img"></div>-->
+<!-- End Page Loading -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START TOP -->
+<div id="top" class="clearfix">
+
+    <!-- Start App Logo -->
+    <div class="applogo">
+        <a href="/" class="logo">CampusEVENT</a>
+    </div>
+    <!-- End App Logo -->
+
+    <!-- Start Sidebar Show Hide Button -->
+    <a href="#" class="sidebar-open-button"><i class="fa fa-bars"></i></a>
+    <a href="#" class="sidebar-open-button-mobile"><i class="fa fa-bars"></i></a>
+    <!-- End Sidebar Show Hide Button -->
+
+    <!-- Start Searchbox -->
+    <form class="searchform">
+        <input type="text" class="searchbox" id="searchbox" placeholder="搜索">
+        <span class="searchbutton"><i class="fa fa-search"></i></span>
+    </form>
+    <!-- End Searchbox -->
+
+
+    <!-- Start Sidepanel Show-Hide Button -->
+    <a href="#sidepanel" class="sidepanel-open-button"><i class="fa fa-outdent"></i></a>
+    <!-- End Sidepanel Show-Hide Button -->
+
+
+    <!-- Start Top Right -->
+    <ul class="top-right">
+        <li class="link">
+            <a href="/" class="hdbutton"><i class="fa fa-refresh"></i>刷新</a>
+        </li>
+        <li class="link">
+            <a href="create_event" class="hdbutton"><i class="fa fa-users"></i> 创建会议</a>
+        </li>
+
+        <li class="dropdown link">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle profilebox"><img class="myPicture"  src="/profile/mypicture" alt="img"><b class="myname"></b><span class="caret"></span></a>
+            <ul class="dropdown-menu dropdown-menu-list dropdown-menu-right">
+                <li role="presentation" class="dropdown-header">概况</li>
+                <li><a href="/"><i class="fa falist fa-user"></i>我的概况</a></li>
+                <li><a href="create_event"><i class="fa falist fa-users"></i>创建会议</a></li>
+                <li><a href="#"><i class="fa falist fa-file-o"></i>文件</a></li>
+                <li class="divider"></li>
+                <li><a  id ="logout" href="#"><i class="fa falist fa-power-off"></i> 退出</a></li>
+            </ul>
+        </li>
+
+    </ul>
+    <!-- End Top Right -->
+
+</div>
+<!-- END TOP -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START SIDEBAR -->
+<div class="sidebar clearfix">
+
+    <ul class="sidebar-panel nav">
+        <li class="sidetitle">通用</li>
+        <li><a href="/"><span class="icon color5"><i class="fa fa-user"></i></span>我的概况(主页)</a></li>
+        <li><a href="attended"><span class="icon color6"><i class="fa fa-check-square-o"></i></span>我参加的会议</a></li>
+        <li><a href="edit-profile"><span class="icon color8"><i class="fa fa-edit"></i></span>修改概况</a></li>
+        <li><a href="create_event"><span class="icon color9"><i class="fa fa-group"></i></span>创建会议</a>
+
+        </li>
+    </ul>
+
+    <ul class="sidebar-panel nav">
+        <li class="sidetitle">其他</li>
+        <li><a href="#"><span class="icon color15"><i class="fa fa-file-archive-o"></i></span>文件</a></li>
+        <li><a href="#"><span class="icon color7"><i class="fa fa-map-marker"></i></span>地图</a></li>
+        <li><a href="#"><span class="icon color10"><i class="fa fa-line-chart"></i></span>信息统计</a></li>
+    </ul>
+
+
+</div>
+<!-- END SIDEBAR -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START CONTENT -->
+<div class="content">
+
+    <!-- Start Page Header -->
+    <div class="page-header row" >
+
+        <!--Start Event Background Image-->
+        <div class="col-md-8">
+            <div id="screen" class=" text-center text-uppercase" style="position:relative;background-color:#b3ffff; height: 300px">
+                <h1 id="announcements" style="line-height:300px; font-size:40px">LIfe is Nothing</h1> <!--to be used in the websocket javascript-->
+                <canvas id="canvas" style="position:absolute;top:0;left:0;"></canvas>
+            </div>
+
+            <br>
+            <form class="form-inline" method="post">
+                <div class="form-group">
+                    <label class=" control-label form-label">弹幕</label>
+                    <input id='bullet' type="checkbox" checked data-toggle="toggle" data-onstyle="success">
+                </div>
+                <input class="form-control" name="info" id="message" type="text" placeholder="弹幕文字信息"/>
+                <button  id="shootBullet" class="btn btn-primary   bb-light-blue"  > 发送</button>
+
+
+            </form>
+        </div>
+
+
+        <!-- Start Page Header Right Div -->
+        <div class="col-md-4">
+            <div class="panel panel-transparent">
+
+                <!--Topic Part-->
+                <div class="panel-title">
+                    <div>
+                        <span id="topic">----</span>
+                    </div>
+
+                    <ul class="panel-tools">
+                        <li><a class="icon minimise-tool"><i class="fa fa-minus"></i></a></li>
+                    </ul>
+                </div>
+
+
+                <div class="panel-body">
+
+                    <!--Description part-->
+                    <div>
+                        <span id="description"> 无相关内容</span>
+                     </div>
+                    <br>
+                    <!--Event Speakers-->
+                    <div >
+                        <span class="f-bold"><i class="fa fa-microphone"></i> 主讲人： </span><span id="speakers" ></span>
+                    </div>
+
+                    <!--Event Location-->
+                    <div >
+                        <span class="f-bold"><i class="fa fa-location-arrow"></i> 会议地点： </span><span id="location" ></span>
+
+                    </div>
+
+                    <!--Event Time-->
+                    <div >
+                        <span class="f-bold"><i class="fa fa-clock-o"></i> 时间： </span> <span id="time" ></span>
+
+                    </div>
+
+                    <!--Event Capacity-->
+                    <div>
+                            <span class="f-bold"><i class="fa fa-group"></i> 会议人数： </span><span id="capacity" ></span>
+                    </div>
+
+                    <!--Event Attendess-->
+                    <div ><span class="f-bold"><i class="fa fa-eye"></i> 实际到场人数： </span> <span id="nbrOfAttendees" ></span></div>
+
+
+
+                </div>
+
+            </div>
+        </div>
+        <!-- End Page Header Right Div -->
+
+    </div>
+    <!-- End Page Header -->
+
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- START CONTAINER -->
+    <div class="container-default ">
+
+        <div class="row">
+
+            <!-- Start Votes Column -->
+            <div class="col-md-6 col-lg-4">
+
+                <h3>投票</h3>
+                <div class="panel panel-transparent">
+                    <div class="panel-body status">
+                        <!--votes display area-->
+                        <div id="votes"></div>
+
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Votes Column -->
+
+
+            <!-- Start Comments Column -->
+            <div class="col-md-6 col-lg-4">
+                <h3>评论</h3>
+
+                <div class="panel panel-default">
+                    <div class="panel-body status">
+                        <div>
+                            <textarea id="post" type="text" class="form-control" placeholder="在这里发表您的评论..."></textarea>
+                            <div class=" text-right">
+                                <span id="showSendPostResult"></span>
+                                <button id="postBtn" class="btn"><i class="fa fa-comment"></i></button>
+                            </div>
+                        </div>
+                        <ul id = "postContainer" class="comments" style="overflow-y: auto; height: 400px;">
+                            <!--start text area for comment input-->
+                            <!--<li id="postContainer">-->
+                            <!--<input id="post" type="text" class="form-control" placeholder="在这里发表您的评论...">-->
+                            <!--<div class=" text-right">-->
+                            <!--<span id="showSendPostResult"></span>-->
+                            <!--<button id="postBtn" class="btn"><i class="fa fa-comment"></i></button>-->
+                            <!--</div>-->
+                            <!--</li>-->
+                            <!--end text area for comment input-->
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Comments Column -->
+
+
+            <!-- Start File Column -->
+            <div class="col-md-6 col-lg-4" >
+
+                <h3>文件资源</h3>
+                <div class="panel panel-widget">
+                    <div class="panel-title">
+                        会议文件 <span id="nbrOfFiles" class="label label-info">29</span>
+
+                        <!--refresh and enlarge panel functionality-->
+                        <ul class="panel-tools">
+                            <li><a class="icon expand-tool"><i class="fa fa-expand"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <!--start publish uploaded files-->
+                    <div class="panel-body" >
+                        <div style=" display: block; max-height: 370px;overflow-y:auto;">
+                            <table class="table table-dic table-hover" >
+                                <tbody  id="fileList" >
+
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!--end publish uploaded files-->
+
+                </div>
+
+            </div>
+            <!-- End File Column -->
+
+        </div>
+
+        <!--End Row-->
+    </div>
+    <!-- END CONTAINER -->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+    <!-- Start Footer -->
+    <div class="row footer text-r">
+        Copyright © 2018 <a href="#" target="_blank">Yes_Binary</a> All rights reserved.
+    </div>
+    <!-- End Footer -->
+
+
+</div>
+<!-- End Content -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+<!-- START SIDEPANEL -->
+
+  <div role="tabpanel" class="sidepanel">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a href="#notifications" aria-controls="notifications" role="tab" data-toggle="tab">消息通知</a></li>
+      <li role="presentation"><a href="#chat" aria-controls="chat" role="tab" data-toggle="tab">我的好友</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+
+      <!-- Start Today -->
+      <div role="tabpanel" class="tab-pane active" id="notifications">
+
+        <div class="sidepanel-m-title">
+          新消息
+          <span class="left-icon"><a id="notificationRefresh"href="#"><i class="fa fa-refresh"></i></a></span>
+        </div>
+
+
+      </div>
+      <!-- End Today -->
+
+      <!-- Start Friend List -->
+      <div role="tabpanel" class="tab-pane" id="chat">
+
+        <div class="sidepanel-m-title">
+          好友列表
+            <span class="left-icon"><a  id="friendRefresh" href="#"><i class="fa fa-refresh"></i></a></span>
+        </div>
+        <ul id="friendList" class="group">
+
+        </ul>
+
+        <form class="search">
+          <input type="text" class="form-control" placeholder="搜索好友">
+        </form>
+      </div>
+      <!-- End Friend List -->
+
+    </div>
+
+  </div>
+<!-- END SIDEPANEL -->
+<!-- //////////////////////////////////////////////////////////////////////////// -->
+
+
+
+<!-- ================================================
+jQuery Library
+================================================ -->
+<script type="text/javascript" src="js/jquery.min.js"></script>
+
+<!-- ================================================
+Jquery UI
+================================================ -->
+<script src="js/jquery-ui/jquery-ui.min.js"></script>
+
+<!-- ================================================
+
+<!-- ================================================
+Bootstrap Core JavaScript File
+================================================ -->
+<script src="js/bootstrap/bootstrap.min.js"></script>
+
+<!-- ================================================
+Plugin.js - Some Specific JS codes for Plugin Settings
+================================================ -->
+<script type="text/javascript" src="js/plugins.js"></script>
+
+
+<!-- ================================================
+Fill the event page
+================================================ -->
+<!--<script type="text/javascript" src="js/event/event-to-server.js"></script>-->
+
+<!-- ================================================
+Bootstrap Select
+================================================ -->
+<script type="text/javascript" src="js/bootstrap-select/bootstrap-select.js"></script>
+
+<!-- ================================================
+Bootstrap Toggle
+================================================ -->
+<script type="text/javascript" src="js/bootstrap-toggle/bootstrap-toggle.min.js"></script>
+
+
+<script src="js/sockjs.min.js"></script>
+<script src="js/stomp.min.js"></script>
+
+<!-- ================================================
+Event WebSocket For updating the event page
+================================================ -->
+<script src="js/event/server-to-event-websocket.js"></script>
+<script src="js/event/admin-event.js"></script>
+<script src="js/event/event-to-server.js"></script>
+<script type="text/javascript" src="js/logout.js"></script>
+
+
+
+<!--<script type="text/javascript">-->
+    <!--$(".form_datetime").datetimepicker({-->
+        <!--format: "dd MM yyyy - hh:ii",-->
+        <!--autoclose: true,-->
+        <!--todayBtn: true,-->
+        <!--startDate: new Date(),-->
+        <!--pickerPosition: "bottom-left"-->
+    <!--});-->
+<!--</script>-->
+</body>
+</html>

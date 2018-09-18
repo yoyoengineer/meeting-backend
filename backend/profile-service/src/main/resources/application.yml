@@ -1,0 +1,50 @@
+spring.application.name: profile-service
+server.port: 8866
+
+##session
+spring.session.store-type: redis
+
+##logging
+logging.level.com.binary: debug
+##neo4j configuration
+spring.data.neo4j.uri: http://localhost:7474
+spring.data.neo4j.username: neo4j
+spring.data.neo4j.password: root
+
+##MongoDB configuration
+spring.data.mongodb.database: profile-service
+spring.data.mongodb.host: localhost
+spring.data.mongodb.port: 27017
+
+
+
+spring.http.multipart.max-file-size: -1
+spring.http.multipart.max-request-size: -1
+
+## Event-driven configurations
+spring:
+  cloud:
+    stream:
+      bindings:
+
+        conferenceEvent:
+         destination: conferenceEvent
+         content-type: application/json
+         group: profileServiceGroup
+         binder: local_rabbit
+
+        newUserEvent:
+          destination: newUserEvent
+          content-type: application/json
+          group: profileServiceGroup
+          binder: local_rabbit
+
+      binders:
+        local_rabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+

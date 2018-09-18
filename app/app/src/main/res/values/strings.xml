@@ -1,0 +1,213 @@
+<resources>
+    <string name="app_name">Binarymeeting</string>
+
+    <!--on boarding activity strings-->
+    <string name="heading">HEADING</string>
+    <string name="about">about</string>
+    <string name="events">Events</string>
+    <string name="descriptionEvent">Binary Meeting provide you with the best way to handle
+            create and share your event across the globe</string>
+    <string name="descriptionMeetings">no numberOfEvent barriers share messages and file during numberOfEvent
+        and put comments in a new fashion way with the danmu tech</string>
+    <string name="descriptionChat">invite your friends to join a meeting start a personal one to
+        one chat with your friends and share personal documents and photos with them</string>
+    <string name="descriptionActivities">create activities events and share
+        them with your friends</string>
+
+    <!--menu text -->
+    <string name="eventsText">Find/creates events</string>
+    <string name="notes">Notes</string>
+    <string name="notesText">Creates/view notes</string>
+    <!--<string name="agenda">Agenda</string>-->
+    <string name="agendaText">organize your time</string>
+    <string name="aboutus">About us</string>
+    <string name="aboutusText">Discover our team</string>
+    <string name="task">task to do</string>
+    <string name="createTask">create tasks to do</string>
+
+
+    <!--login text -->
+    <string name="usernamehint">username / email</string>
+    <string name="userpasshint">password</string>
+    <string name="login">Login</string>
+    <string name="signin">Sign in</string>
+    <string name="forgotpass"><u>Forgot password</u></string>
+    <string name="signuptext"><u>sign up</u></string>
+
+
+    <!--bottom navigation drawer text -->
+    <string name="home">Home</string>
+    <string name="contact">contact</string>
+    <string name="messages">messages</string>
+    <string name="more">more</string>
+
+
+    <string name="my_email">my email</string>
+    <string name="my_name">name</string>
+    <string name="my_contact">123456789</string>
+    <string name="search">search</string>
+    <string name="settings">settings</string>
+    <string name="activities">activities</string>
+    <string name="logout">logout</string>
+
+    <string name="my_website">my website</string>
+    <string name="edit_profile"><u>edit profile</u></string>
+    <string name="tap_to_change_your_photo">tap to change your photo</string>
+    <string name="save">save</string>
+    <string name="company">my company</string>
+
+    <string name="empty_view_text">you have no contact for now "\n to create a new contact or request a friend "\n
+        go to the add button down on the screen</string>
+    <string name="email">email</string>
+
+    <!--get the contact(S) -->
+    <plurals name="subtitle_plural">
+        <item quantity="one">%1$d contact</item>
+        <item quantity="other">%1$d contacts</item>
+    </plurals>
+
+
+    <!-- number of people to attend numberOfEventings-->
+    <plurals name="attended_plural">
+        <item quantity="one">%1$d person attendees the event</item>
+        <item quantity="other">%1$d persons attendees the event</item>
+    </plurals>
+
+    <!-- number of days the eventn has been created -->
+    <plurals name="day_plural">
+        <item quantity="one">created %1$d day ago</item>
+        <item quantity="other">created %1$d days ado</item>
+    </plurals>
+
+    <!-- statistics-->
+    <string name="paged_viewed_contact_page_profile">%1$d</string>
+    <string name="number_of_event_contact_page_profile">%1$d</string>
+    <string name="expected_participant_contact_page_profile">%1$d</string>
+    <string name="attendes_contact_page_profile">%1$d</string>
+
+    <!-- in the comment recycler-->
+    <string name="view_profile_event_comment"><u>view profile</u></string>
+    <string name="date_commented_my_event_contact">commented the </string>
+
+    <!-- home event-->
+    <string name="event_home_description">get into the events world and discover a sharing univers
+            full of possibilities</string>
+
+    <!-- in the send announcement page-->
+    <string name="nb_announcement">Send an announce to all the people that attend the event and those who will just pass by to see it, and keep then inform of all the updates to the event</string>
+
+    <!-- statistics-->
+    <string name="collaspse_comment"><u>Collapse comment</u></string>
+    <string name="qr_code_generate">Generates the QR code for this event</string>
+    <string name="interact_danmuku">send a bullet</string>
+    <string name="send">send</string>
+    <string name="hint_to_search">you can search for the event in the map bellow</string>
+    <string name="hint_comment">write your comment</string>
+    <string name="dismiss"><u>dismiss</u></string>
+    <string name="details"><u>view details</u></string>
+    <string name="collaspse_announcement"><u>collapse announcement</u></string>
+    <string name="collapse">collapse</string>
+    <string name="show_subtitle">number of tasks</string>
+    <string name="hide_subtitle">hide it</string>
+    <string name="info_create_task">Enter a new text in the edit area bellow and hit the save
+        button to create a new task or edit it to change the title of a existing task in your list</string>
+    <string name="message_to_send">message to send</string>
+    <string name="title">Title</string>
+    <string name="scan">scan</string>
+
+
+    <!-- task to do-->
+    <plurals name="subtitle_format">
+        <item quantity="one">%1$d task to do</item>
+        <item quantity="other">%1$d tasks to do</item>
+    </plurals>
+
+
+    <!-- 12-04-18-->
+    <plurals name="todo_plural">
+        <item quantity="one">%1$d task</item>
+        <item quantity="other">%1$d tasks</item>
+    </plurals>
+
+    <string name="label_edit">edit</string>
+    <string name="label_delete">delete</string>
+    <string name="label_check">check</string>
+    <string name="label_web_search">web search</string>
+
+    <!-- 12-14-18-->
+    <string name="title_note_list">List of notes</string>
+    <string name="show_notes">number of notes</string>
+    <string name="select_task_to_perform">select task to perform</string>
+    <string name="enter_title">Enter title :</string>
+    <string name="take_notes">take notes</string>
+    <string name="number_attendees">Attendees</string>
+    <string name="stat_votes">Votes</string>
+    <string name="event_document">Document</string>
+    <string name="lottery">Lottery</string>
+    <string name="photos">Photos</string>
+    <string name="write_comments">Write comments</string>
+    <string name="people">people</string>
+    <string name="liked_by">Liked by</string>
+    <string name="like">Like</string>
+    <string name="view_more_comments">View more comments</string>
+    <string name="view_more_announcement">View more announcement</string>
+    <string name="dismiss_liked"><u>dismiss</u></string>
+    <string name="welcome_signin">Welcome to Campus Event, by sign in up, you agreed to our</string>
+    <string name="term_of_use"><u>Terms of use</u></string>
+    <plurals name="notes_plural">
+        <item quantity="one">%1$d note</item>
+        <item quantity="other">%1$d notes</item>
+    </plurals>
+    <string name="fab">Add Agenda</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="date_picker_title">SELECT A DATE</string>
+    <string name="time_picker_title">SELECT A DATE</string>
+    <string name="enter_your_title_here">enter your title here</string>
+    <string name="start_typing_your_text_here">start typing your text here</string>
+    <string name="announcement"><u>Announcements</u></string>
+    <string name="view_comment"><u>View Comment</u></string>
+    <string name="view_announcement"><u>View Announcement</u></string>
+    <string name="title_activity_create_meeting">CreateMeetingActivity</string>
+    <string name="title_activity_baidu_map">BaiduMapActivity</string>
+    <string name="title_activity_create_lottery">CreateLotteryActivity</string>
+    <string name="title_activity_start_lottery">StartLotteryActivity</string>
+    <string name="title_activity_agenda_main">AgendaMainActivity</string>
+    <string name="title_activity_agenda_add">ADD A NEW AGENDA</string>
+    <string name="title_activity_agenda_content">AgendaContentActivity</string>
+
+
+    <string name="internal_storage">Internal storage</string>
+    <string name="chooser_title">Lorem ipsum</string>
+    <string name="choose_file">Select a file</string>
+    <string name="empty_directory">Empty Directory</string>
+    <string name="storage_removed">Storage was removed or unmounted.</string>
+    <string name="error_selecting_file">Error selecting File</string>
+    <string name="you_have_answer_that_poll">you have answered this poll.</string>
+    <string name="your_answer">The  answers are: </string>
+    <string name="see_result">see result</string>
+    <string name="Answer_poll">Answer Poll</string>
+    <string name="refresh">refresh</string>
+    <string name="close">close</string>
+    <string name="documents">Documents</string>
+    <string name="display"><u>display</u></string>
+
+    <string name="title_activity_other_events">OtherEventsActivity</string>
+    <string name="answer_poll">Answer Poll</string>
+    <string name="title_activity_single_fragment_master">SingleFragmentActivityMaster</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="total_number_of_answers">Total number of answers :</string>
+    <string name="those_people_has_attended_this_event">Those people has attended this event</string>
+    <string name="profile">profile</string>
+    <string name="send_file">send file</string>
+    <string name="type_your_message">type your message</string>
+    <string name="welcome_to_campus_event">Welcome To Campus Event</string>
+    <string name="enter_task_to_save">Enter task to save</string>
+    <string name="my_description">LOrem ipsum dolor sit amet, consectetur adipiscing elit. Mauris metus massa, luctus in tincidut a, portittor ac leo.</string>
+</resources>

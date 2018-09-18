@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".event.MoreAnnouncementActivity"
+    android:background="@drawable/announcements_bac_t">
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/cc_view"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginEnd="5dp"-->
+        <!--android:layout_marginStart="5dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="100dp">-->
+
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/gradient_event_list_topic_info">-->
+
+            <!--<master.flame.danmaku.ui.widget.DanmakuView-->
+                <!--android:id="@+id/danmaku_view"-->
+                <!--tools:text="danmuku"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+        <!--</LinearLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/recycler_event_list_announcement"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

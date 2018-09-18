@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="keywords" content="bootstrap, admin, dashboard, flat admin template, responsive," />
+  <title>登陆</title>
+
+  <!-- ========== Css Files ========== -->
+  <link href="css/root.css" rel="stylesheet"/>
+  <style type="text/css">
+    body{
+      background: rgba(212, 233, 255, 0.6) url("img/hands_up.jpg")  no-repeat;
+      /*background-image: url("img/p_presentation.jpg");*/
+      /*background-color: rgba(212, 233, 255, 0.6);*/
+      /*background-repeat: no-repeat;*/
+      /*background-position: center center;*/
+    }
+
+
+  </style>
+  </head>
+  <body>
+
+    <div class="login-form" >
+      <form id="login_form" method="POST" novalidate style="background-color: rgba(212, 233, 255, 0.6)" >
+        <div class="top">
+          <!--<img src="img/meeting.png" alt="icon" class="icon">-->
+          <h1>CampusEVENT</h1>
+          <h4>比以往更便捷</h4>
+        </div>
+        <div class="form-area">
+          <div class="group">
+            <input id="email" type="email" name="username" class="form-control" placeholder="邮箱地址" required>
+            <i class="fa fa-user"></i>
+          </div>
+          <div class="group">
+            <input id="password" type="password" name="password" class="form-control" placeholder="密码" required>
+            <i class="fa fa-key"></i>
+          </div>
+          <div class="checkbox checkbox-primary">
+            <input id="checkbox101" type="checkbox" checked/>
+            <label for="checkbox101"> 记住密码</label>
+          </div>
+          <button type="submit" class="btn btn-default btn-block">登陆</button>
+        </div>
+      </form>
+      <div class="footer-links row">
+        <div class="col-xs-6"><a href="http://localhost:8080/register"><i class="fa fa-external-link"></i> 现在去注册</a></div>
+        <div class="col-xs-6 text-right"><a href="#"><i class="fa fa-lock"></i> 忘记密码</a></div>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js" type="text/javascript"></script>
+    <script>
+      $(function() {
+          $(":text, :password,#email").after("<span class='text-danger error'></span>");
+
+          var e_D = $("#email");
+          var p_D = $("#password");
+          e_D.val("");
+          p_D.val("");
+
+          if (location.href.indexOf("error") >= 0) {
+              e_D.next().text("Bad Credentials")
+          }
+          $("#login_form").submit(function (event) {
+
+              event.preventDefault();
+              $.ajax({
+                  url: "signin",
+                  headers: {
+                      "Authorization": "Basic " + btoa(e_D.val() + ":" + p_D.val())
+                  },
+                  success: function (data) {
+                      window.location.replace("/");
+                      console.log(data);
+                      console.log("ok");
+                  },
+                  error: function (jqXHR, status, error) {
+                      e_D.next().text("Bad Credentials");
+                      console.log("bad credentials");
+                  }
+              });
+
+
+
+              // var isValid = true;
+              //
+              //
+              // // validating the email/username entry
+              //
+              // var e_Pat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+              //
+              // var email = e_D.val().trim();
+              // var errorMsg = e_D.next();
+              // e_D.val(email);
+              // if (email == "") {
+              //     errorMsg.text("邮箱地址不可以空着呦");
+              //     isValid = false;
+              // }
+              // else if (!e_Pat.test(email)) {
+              //     errorMsg.text("邮箱地址有误");
+              //     isValid = false;
+              // }
+              // else {
+              //     errorMsg.text("");
+              // }
+              //
+              // // validating the password entry
+              // var pwd = p_D.val();
+              // errorMsg = p_D.next();
+              // if (pwd.length < 6) {
+              //     errorMsg.text("密码必须大于六个字符");
+              //     isValid = false;
+              // }
+              // else {
+              //     errorMsg.text("");
+              // }
+              //
+              // if (isValid) {
+              //     $.ajax({
+              //         url: "signin",
+              //         headers: {
+              //             "Authorization": "Basic " + btoa(email + ":" + pwd)
+              //         },
+              //         success: function (data) {
+              //             window.location.replace("/");
+              //         },
+              //         error: function (jqXHR, status, error) {
+              //             e_D.next().text("Bad Credentials");
+              //         }
+              //     });
+              // }
+
+          });
+      })
+    </script>
+</body>
+</html>

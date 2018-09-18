@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/action_events"
+        android:icon="@drawable/ic_event_black_24dp"
+        android:title="@string/events"
+        app:showAsAction="always|withText" />
+    <item
+        android:id="@+id/action_search"
+        android:icon="@drawable/ic_search_black_24dp"
+        android:title="@string/search"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="@string/settings"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_activities"
+        android:icon="@drawable/ic_airport_shuttle_black_24dp"
+        android:title="@string/activities"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_exit_to_app_black_24dp"
+        android:title="@string/logout"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_file"
+        android:icon="@drawable/ic_insert_drive_file_black_24dp"
+        android:title="file"/>
+
+
+
+</menu>

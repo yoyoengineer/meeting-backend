@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".event.MoreCommentActivity"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/commment_bac">
+
+    <!--<android.support.v7.widget.CardView-->
+        <!--android:id="@+id/cc_view"-->
+        <!--android:layout_marginTop="5dp"-->
+        <!--android:layout_marginEnd="5dp"-->
+        <!--android:layout_marginStart="5dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="80dp">-->
+
+        <!--<LinearLayout-->
+            <!--android:orientation="vertical"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:background="@drawable/gradient_event_list_topic_info">-->
+
+            <!--<master.flame.danmaku.ui.widget.DanmakuView-->
+                <!--android:id="@+id/danmaku_view"-->
+                <!--tools:text="danmuku"-->
+                <!--android:textColor="@android:color/black"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent" />-->
+        <!--</LinearLayout>-->
+    <!--</android.support.v7.widget.CardView>-->
+
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/comment_area"
+            android:layout_width="275dp"
+            android:layout_height="90dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="5dp"
+            android:hint="@string/hint_comment"
+            android:textSize="15sp"
+            android:gravity="top"
+            android:inputType="textMultiLine"
+            android:focusable="false"
+            android:background="@drawable/rounded_edittext"
+            />
+
+        <LinearLayout
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/send_comment_button"
+                android:text="@string/send"
+                android:background="@drawable/circlegreenview"
+                android:layout_marginStart="10dp"
+                android:textStyle="italic"
+                android:layout_width="55dp"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:id="@+id/recycler_event_list_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </android.support.v7.widget.RecyclerView>
+
+</LinearLayout>

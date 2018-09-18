@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/stomp.min.js"></script>
+</head>
+<body>
+<form method="post">
+    Username<input type="text" id="username">
+    Passwor<input type="text" id="password">
+    <input type="submit" value="submit">
+</form>
+<button id="connect">connect</button>
+<button id="disconnect">disconnect</button>
+<form method="post">
+    <textarea id="message"></textarea>
+    <!--<input type="submit">-->
+</form>
+<script src="js/jquery.min.js"></script>
+<script src="js/sockjs.min.js"></script>
+<script src="js/stomp.min.js"></script>
+<script>
+    $(function(){
+        var stompClient = null;
+
+        function connect(){
+            var socket = new SockJS('/stompwebsocket');
+            stompClient = Stomp.over(socket);
+            stompClient.connect({}, function(frame){
+                console.log("Connected " + frame);
+                stompClient.subscribe("/user/queue/chat", function(message){
+                    var receivedMessage = JSON.parse(message.body);
+                    var content = receivedMessage.formUser+"<br>"
+                                +receivedMessage.toUser+"<br>"
+                                +receivedMessage.text;
+
+                    $("#message").val(content);
+                });
+            });
+        }
+
+        function disconnect() {
+            if(stompClient!==null)
+                stompClient.disconnect();
+            console.log("Disconnected");
+        }
+
+        $("#connect").on('click',function(event){
+            event.preventDefault();
+            connect();
+        });
+
+        $("#disconnect").on('click', function(event){
+            event.preventDefault();
+            disconnect();
+        })
+
+        $("form").on('submit',function(e){
+            e.preventDefault();
+            var email = $('#username').val();
+            var pwd = $('#password').val();
+            $.ajax({
+                url: "/signin",
+                headers: {
+                    "Authorization": "Basic " + btoa(email + ":" + pwd)
+                },
+                success: function (data) {
+                    console.log("Logged in");
+                },
+                error: function (jqXHR, status, error) {
+                    console.log("Failed to log in");
+                }
+            });
+        })
+    })
+</script>
+</body>
+</html>

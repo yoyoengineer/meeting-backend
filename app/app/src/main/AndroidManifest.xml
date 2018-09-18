@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.meeting.binary.android.binarymeeting">
+
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- 用于读取手机当前的状态 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 访问网络，网络定位需要上网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <application
+        android:name=".realm_init.MyApplication"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="1BmG7u9McRpySMp33crs2V81hQw3AnPI" />
+
+        <activity
+            android:name=".start.StartActivity"
+            android:theme="@style/NoBarAction">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".start.HomeActivity"
+            android:theme="@style/NoBarAction" />
+        <activity
+            android:name=".start.OnboardingActivity"
+            android:theme="@style/NoBarAction" />
+        <activity
+            android:name=".start.LoginActivity"
+            android:theme="@style/NoBarAction" />
+        <activity android:name=".profile.ProfileActivity"
+            android:theme="@style/NoBarAction"/>
+        <activity android:name=".profile.EditiProfileActivity" />
+        <activity
+            android:name=".event.HomeEventActivity"
+            android:parentActivityName=".start.HomeActivity"
+            android:theme="@style/NoBarAction" />
+        <activity
+            android:name=".event.MyEventListActivity"
+            android:parentActivityName=".event.HomeEventActivity" />
+        <activity android:name=".contact.ContactActivity" />
+        <activity android:name=".contact.AddContactActivity" />
+        <activity android:name=".contact.ContactPageActivity"
+            android:theme="@style/NoBarAction"/>
+        <activity
+            android:name=".event.MyEventActivity"
+            android:parentActivityName=".event.MyEventListActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".event.admin.AdminActivity"
+            android:theme="@style/NoBarAction" />
+        <activity
+            android:name=".contact.ContactEventActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".message.MessageActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:parentActivityName=".message.ChatListActivity"
+            />
+
+        <service android:name=".service.back_service.MyService" />
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote" />
+        <service android:name=".event.upload_download.DownloadService" />
+
+        <activity android:name=".contact.InfoEventActivity" />
+
+        <!-- extra info, notes and task to do -->
+        <activity
+            android:name=".other.todo.ListTaskActivity"
+            android:parentActivityName=".start.HomeActivity" />
+        <activity
+            android:name=".other.todo.AddTaskActivity"
+            android:parentActivityName=".other.todo.ListTaskActivity" />
+        <activity android:name=".other.notes.ListNoteActivity" />
+        <activity
+            android:name=".other.notes.CreateNoteActivity"
+            android:parentActivityName=".other.notes.ListNoteActivity" />
+        <activity
+            android:name=".start.SignupActivity"
+            android:theme="@style/NoBarAction" />
+
+        <meta-data
+            android:name="com.meeting.binary.android.binarymeeting.service.cookie.GlideLoadCookieGenerator"
+            android:value="GlideModule" />
+
+        <activity
+            android:name=".event.CreateMeetingActivity"
+            android:label="@string/title_activity_create_meeting"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".event.BaiduMapActivity"
+            android:label="@string/title_activity_baidu_map"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".event.CreateLotteryActivity"
+            android:label="@string/title_activity_create_lottery"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".event.StartLotteryActivity"
+            android:label="@string/title_activity_start_lottery"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".event.admin.PollActivity"
+            android:parentActivityName=".event.MyEventActivity" />
+        <activity
+            android:name=".event.upload_download.UploadDocumentMainActivity"
+            android:theme="@style/NoBarAction" />
+        <activity
+            android:name=".event.upload_download.UploadPhotoMainActivity"
+            android:theme="@style/NoBarAction" />
+        <activity
+            android:name=".event.CreatePollActivity"
+            android:parentActivityName=".event.admin.AdminActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".event.SendAnnouncementActivity"
+            android:parentActivityName=".event.MyEventActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".contact.document_photo.PhotoActivity" />
+        <activity android:name=".contact.document_photo.DocumentActivity" />
+        <activity android:name=".event.admin.AnswerPollActivity" />
+        <activity android:name=".event.MoreCommentActivity"/>
+        <activity android:name=".event.MoreAnnouncementActivity"/>
+        <activity android:name=".other.agenda.AgendaMainActivity" />
+        <activity
+            android:name=".event.ParticipatingEventsActivity"
+            android:label="@string/title_activity_other_events" />
+        <activity
+            android:name=".event.other_events.OtherEventsActivity"
+            android:label="@string/title_activity_other_events" />
+        <activity android:name=".event.other_events.AttendedEventActivity" />
+        <activity
+            android:name=".other.agenda.AgendaAddActivity"
+            android:theme="@style/NoBarAction" />
+        <activity
+            android:name=".other.agenda.AgendaContentActivity"
+            android:theme="@style/NoBarAction" />
+        <activity android:name=".other.agenda_contact.ContactAgendaMainActivity" />
+        <activity android:name=".other.agenda_contact.ContactAgendaContentActivity" />
+        <activity android:name=".event.admin.PollResultActivity" />
+        <activity
+            android:name=".event.upload_download.UploadPhotoActivity"
+            android:parentActivityName=".event.admin.AdminActivity" />
+        <activity
+            android:name=".event.upload_download.upLoadDocumentActivity"
+            android:parentActivityName=".event.admin.AdminActivity" />
+        <activity android:name=".event.admin.ListAttendeesActivity" />
+        <activity android:name=".message.ChatListActivity"
+            />
+    </application>
+
+</manifest>

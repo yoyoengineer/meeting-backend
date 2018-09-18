@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_contact"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:id="@+id/contact_img"
+            android:src="@drawable/photo_no_image"
+            android:background="@drawable/circlewhitebutton" />
+
+
+        <LinearLayout
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:textSize="17sp"
+                android:id="@+id/contact_name"
+                tools:text="the contact name"/>
+
+            <TextView
+                android:layout_width="170dp"
+                android:layout_height="25dp"
+                android:textStyle="italic"
+                android:textSize="14sp"
+                android:textColor="@color/darkgray"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:id="@+id/last_message"
+                tools:text="the last message"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="end">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="0dp"
+                android:src="@drawable/today" />
+
+            <TextView
+                android:id="@+id/last_message_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1dp"
+                android:layout_marginStart="0dp"
+                tools:text="12:22" />
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+
+    <View
+        android:layout_marginTop="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/green"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="5dp"/>
+
+</LinearLayout>

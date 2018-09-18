@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: gateway-server
+#  cloud:
+#      gateway:
+#        filter:
+#          secure-headers:
+#            content-type-options:
+
+logging:
+  level:
+    com.kanz: debug
+    org.springframework.web: warn
+
+#cloud:
+#    gateway:
+#      filter:
+#        remove-non-proxy-headers:
+#          headers:
+#          - dummy
+
